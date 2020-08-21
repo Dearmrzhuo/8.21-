@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload=function(){
+        //     var ajax=new XMLHttpRequest(); //1.获取对象
+
+        //     ajax.responseType="json"; //7.数据格式的指定
+
+
+
+        //     ajax.onreadystatechange=function(){  //2.添加监听事件
+        //         if(ajax.readyState==4){
+        //             if(ajax.status==200){     //3.进行数据状态的变化
+        //                 console.log(ajax.response); //6.获取到查找的数据
+        //                 //
+        //                 //
+        //                 //
+        //             }
+        //         }
+        //     }
+        //     // ajax.onload=function(){
+        //     //     console.log(ajax.response)
+        //     // }
+            
+        //     //方式传递数据，地址后面加查询字符串就可以;
+        //     //post方式传递数据，数据故在send(里面)，设置头信息
+        //     ajax.open("post","ajax.php？id=1");  //4. 指定ajax方式地址
+        //     ajax.setRequestHeader ("Content-typel" , "applicat ion/x-wWw-form-urlencoded")
+        //     ajax.send(); //5.发送出去
+
+
+
+        //     //8.根据不同的请求，发送不同的数据
+        // }
+
+
+        var id=1;
+        ajax({
+            url:"ajax.php",
+            type:"post",
+            dataType:"text",
+            data:"id",
+            success:function (e) {
+                console. log(e)
+            }
+        })
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

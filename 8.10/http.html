@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        http协议执行的过程
+
+        web应用数据传输的过程
+
+        1.进行域名的解析   baidy.com(域名)->39.156.69.79 (ip地址ipv4)
+          a.找到浏览器自带hosts文件(记录域名和地址的一一对应的关系，记录我们常用的域名和地址的关系)
+          b.系统里面自带的hosts文件  windows (C:/System32- ->drivers- ->etc/hosts)  linux(/etc/hosts)
+          c.路由里面自带hosts文件
+          d.就近的dns镜像服务器  相邻的dns镜像服务器
+          f.根dns服务器 美国和中国(海底光缆)
+        2.发送信息
+          1.确认这个地址是否可用
+          2.发送头信息->发送主体信息  (头信息)
+          3.确认接收完毕    (服务器如何接收请求)
+                    3次握手
+        3.接收信息   B-A
+          1.确认对方地址是否可用  (服务器如何作响应 apache php mtsql)
+          2.传递数据
+          3. 确认是否接收完备   (客户端如何处理数据)
+          4.确认断开 
+                    4次挥手
+        4.服务器,接收/响应客户端的请求  apache   nginx   tomcat
+        5.客户端发送请求， 接收返回的信息  浏览器,自己写的客户端
+
+
+
+
+        服务器端解析：
+
+        apache服务器的规则:
+            后缀名html的文件，apache会 直接返回给客户端，不能写php的代码
+            后缀名是Php的文件，交给php模块进行解析，可以进行混排，解析定界符里后面的内容，其他内容原样输出给apache ,返回给客户端端。客户端对返回的内容做解析和显示。webkit模块解析html/css， v8引擎 js
+        
+
+
+
+
+
+
+
+    -->
+</body>
+</html>

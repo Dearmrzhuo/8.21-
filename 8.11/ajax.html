@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        window.onload =function(){
+            //既然不是同步，如果是异步，不是需要页面跳转才能获得数据，就需要分配其他人帮浏览器去取数据，浏览器本身不跳转，只需要创建一个对象，让这个对象去取数据，将数据取回来之后进行数据分配
+
+
+            var button=document.querySelector("button");
+
+            button.onclick=function(){
+
+                var ajax=new XMLHttpRequest();//异步请求
+
+                //事件状态改变的监控事件，单线程异步机制
+
+                /*
+                1.代表我们已经告知ajax相应的地址，和传递的方式
+                2.信息已经发送
+                3.请求的服务器存在
+                4.代表数据已经拿到
+
+                ajax流程，常用的异步手段
+                */
+
+                ajax.onreadystatechange=function(){
+                    if(ajax.readyState==4){
+                        if(ajax.status==200){
+                            //数据已经完全返回
+                            document.querySelector("div").innerHTML=(ajax.response)
+                        }
+
+                    }
+                }
+
+                ajax.open("get","ajax1.html")
+
+                ajax.send();
+                //数据能里立即回来
+
+            }
+        }
+    </script>
+</head>
+<body>
+    我是ajax1的内容<br>
+    <a href="ajax1.html">ajax1</a>
+    <button>获取ajax1</button>
+    <div>
+
+    </div>
+</body>
+</html>

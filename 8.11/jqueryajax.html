@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery3.5.1.min.js"></script>
+    <script>
+        // $.ajax({
+        //     url:"ajax.php",
+        //     type:"get",
+        //     dataType:"json",
+        //     data:{id:0},
+        //     success:function (e) {
+        //         console.log(e);
+        //     }
+        // });
+        
+        // $.getJSON({
+        //     url:"ajax.php",
+        //     data:{id:0},
+        //     success:function(e){
+        //         console.log(e);
+        //     }
+        // })
+
+        $(function(){
+            $(":button").click(function(){
+                // var name=$("input[name=name]").val()
+                // var sex=$("input[name=sex]").val()
+                // var age=$("input[name=age]").val()
+                // var classes=$("input[name=class]").val()
+
+                $.ajax({
+                    url:"",
+                    // data:{name:name,age:age,sex:sex,classes:classes},
+                    data:$("form").serialize(),
+                    success:function(e){
+                        if(e=="ok"){
+                            alert("数据插入成功")
+                            $("input[name=name]").val("")
+                            $("input[name=sex]").val("")
+                            $("input[name=age]").val("")
+                            $("input[name=class]").val("")
+                        }
+                    }
+                })
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <form action="aa">
+        <input type="text" name="name"><br>
+        <input type="text" name="sex"><br>
+        <input type="text" name="age"><br>
+        <input type="text" name="class"><br>
+
+        <input type="button" value="提交">
+    </form>
+</body>
+</html>

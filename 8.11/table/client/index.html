@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquerymini.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>可编辑表格</h1>
+        <a href="javascript:;" class="btn btn-danger">添加信息</a>
+    <table class="table table-bordered">
+        <thead></thead>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+        <tbody>
+
+        </tbody>
+            
+    </table>
+    </div>
+    <style>
+        .wait{
+            width: 10px;
+            height: 30px;
+            background: #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            animation: wait 0.5s linear infinite alternate;
+            display: none;
+        }
+        .wait::before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            position: absolute;
+            left: -20px;
+            top: 0;
+            animation: wait 0.5s linear infinite alternate 0.5s;
+        }
+        .wait::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            position: absolute;
+            left:20px;
+            top: 0;
+            animation: wait 0.5s linear infinite alternate 1s;
+        }
+        @keyframes wait{
+            0%{
+                transform: scaleY(1);
+            }
+            100%{
+                transform: scaleY(1.2);
+            }
+        }
+    </style>
+    <div class="wait"></div>
+
+    <div class="message"></div>
+
+</body>
+</html>
